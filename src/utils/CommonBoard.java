@@ -82,5 +82,9 @@ public class CommonBoard extends ConfigBoard{
 	protected boolean randomPattern = false;
 	protected boolean randomStarted = false;
 	protected boolean randomMessage = false;
+	
+	// new lib vars
+	protected final String PRODUCT_NAME = "reflex_game";
+	protected String userDir;
 
 }
