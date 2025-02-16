@@ -17,13 +17,9 @@ public class driver {
 	 * @param String[] args
 	 */
 	public static void main(String[] args) {
-		if(args.length < 2){
-			System.out.println("Program syntax:\n"
-					+ "java driver <working directory> <user directory>");
-			System.exit(0);
-		}
-		Properties properties = new Properties(args[0]);
-		Board board = new Board(properties, args[1]);
+		String currentDir = System.getProperty("user.dir");
+		Properties properties = new Properties(currentDir);
+		Board board = new Board(properties);
 		board.init();
 		properties.setBoard(board);
 		Mover mover = new Mover(properties);

@@ -19,7 +19,6 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JTextArea;
 
-import balogging.BALoggerUtil;
 import core.LevelEngine;
 import highscores.IBoardOutline;
 import highscores.NameInput;
@@ -31,7 +30,6 @@ public class CommonBoard extends ConfigBoard{
 	protected NameInput nameInput = null;
 	protected IBoardOutline board;
 	protected Levels levels;
-	protected BALoggerUtil balogger;
 	
 	protected JFrame boardPage = null;
 	protected JDesktopPane pane;
@@ -85,6 +83,5 @@ public class CommonBoard extends ConfigBoard{
 	
 	// new lib vars
 	protected final String PRODUCT_NAME = "reflex_game";
-	protected String userDir;
 
 }

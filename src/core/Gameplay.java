@@ -116,7 +116,7 @@ public class Gameplay extends UtilsBoard{
 			score.setText(EMPTY_DISPLAY);
 			doStop(true);
 			try {
-				nameInput = new NameInput(properties.getRoot(), board, PRODUCT_NAME, userDir);
+				nameInput = new NameInput(properties.getRoot(), board, PRODUCT_NAME, "");
 				nameInput.setDescending();
 				nameInput.init((int) finalScore);
 				disable();
@@ -222,7 +222,7 @@ public class Gameplay extends UtilsBoard{
 			doStop(true);
 			
 			try {
-				nameInput = new NameInput(properties.getRoot(), board, PRODUCT_NAME, userDir);
+				nameInput = new NameInput(properties.getRoot(), board, PRODUCT_NAME, "");
 				nameInput.init((int) finalScore);
 				nameInput.setDescending();
 				disable();
@@ -236,8 +236,6 @@ public class Gameplay extends UtilsBoard{
 	
 	public void doCompleted() throws IOException{
 		//game_charter logging
-		balogger.stopTimer();
-		balogger.logScore("", score.getText());
 		
 		stopTimer();
 		count++;
@@ -272,7 +270,7 @@ public class Gameplay extends UtilsBoard{
 			score.setText(EMPTY_DISPLAY);
 			
 			try {
-				nameInput = new NameInput(properties.getRoot(), board, PRODUCT_NAME, userDir);
+				nameInput = new NameInput(properties.getRoot(), board, PRODUCT_NAME, "");
 				nameInput.init((int) finalScore);
 				nameInput.setDescending();
 				disable();
@@ -303,8 +301,6 @@ public class Gameplay extends UtilsBoard{
 	
 	protected void doStop(boolean doLog) throws IOException{
 		if(doLog) {
-			balogger.stopTimer();
-			balogger.logScore("", score.getText());
 		}
 		if(!randomizeFlag){
 			started = false;
