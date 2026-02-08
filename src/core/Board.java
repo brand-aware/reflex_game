@@ -39,11 +39,12 @@ public class Board extends UserActions implements IBoardOutline{
 	private ButtonHandler handler;
 	private MenuHandler menuHandler;
 	
-	public Board(Properties p){
+	public Board(Properties p, String usrDir){
 		properties = p;
+		userDir = usrDir;
 		levels = new Levels();
 		levelEngine = new LevelEngine(WIDTH, HEIGHT, levels);
-		balogger = new BALoggerUtil(properties.getRoot(), "reflex_game");
+		balogger = new BALoggerUtil(properties.getRoot(), PRODUCT_NAME, userDir);
 		board = this;
 	}
 	
@@ -331,5 +332,15 @@ public class Board extends UserActions implements IBoardOutline{
 		} catch (IOException e) {
 			e.printStackTrace();
 		}		
+	}
+
+	@Override
+	public int getFrameHeight() {
+		return totalY;
+	}
+
+	@Override
+	public int getFrameWidth() {
+		return totalX;
 	}
 }

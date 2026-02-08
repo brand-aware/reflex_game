@@ -116,7 +116,7 @@ public class Gameplay extends UtilsBoard{
 			score.setText(EMPTY_DISPLAY);
 			doStop(true);
 			try {
-				nameInput = new NameInput(properties.getRoot(), board);
+				nameInput = new NameInput(properties.getRoot(), board, PRODUCT_NAME, userDir);
 				nameInput.setDescending();
 				nameInput.init((int) finalScore);
 				disable();
@@ -222,7 +222,7 @@ public class Gameplay extends UtilsBoard{
 			doStop(true);
 			
 			try {
-				nameInput = new NameInput(properties.getRoot(), board);
+				nameInput = new NameInput(properties.getRoot(), board, PRODUCT_NAME, userDir);
 				nameInput.init((int) finalScore);
 				nameInput.setDescending();
 				disable();
@@ -272,7 +272,7 @@ public class Gameplay extends UtilsBoard{
 			score.setText(EMPTY_DISPLAY);
 			
 			try {
-				nameInput = new NameInput(properties.getRoot(), board);
+				nameInput = new NameInput(properties.getRoot(), board, PRODUCT_NAME, userDir);
 				nameInput.init((int) finalScore);
 				nameInput.setDescending();
 				disable();

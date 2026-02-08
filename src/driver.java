@@ -17,13 +17,13 @@ public class driver {
 	 * @param String[] args
 	 */
 	public static void main(String[] args) {
-		if(args.length < 1){
+		if(args.length < 2){
 			System.out.println("Program syntax:\n"
-					+ "java driver <working directory>");
+					+ "java driver <working directory> <user directory>");
 			System.exit(0);
 		}
 		Properties properties = new Properties(args[0]);
-		Board board = new Board(properties);
+		Board board = new Board(properties, args[1]);
 		board.init();
 		properties.setBoard(board);
 		Mover mover = new Mover(properties);
