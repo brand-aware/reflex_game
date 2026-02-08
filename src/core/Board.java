@@ -27,7 +27,6 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
-import balogging.BALoggerUtil;
 import highscores.HighScores;
 import highscores.IBoardOutline;
 import highscores.hsProperties;
@@ -39,12 +38,10 @@ public class Board extends UserActions implements IBoardOutline{
 	private ButtonHandler handler;
 	private MenuHandler menuHandler;
 	
-	public Board(Properties p, String usrDir){
+	public Board(Properties p){
 		properties = p;
-		userDir = usrDir;
 		levels = new Levels();
 		levelEngine = new LevelEngine(WIDTH, HEIGHT, levels);
-		balogger = new BALoggerUtil(properties.getRoot(), PRODUCT_NAME, userDir);
 		board = this;
 	}
 	

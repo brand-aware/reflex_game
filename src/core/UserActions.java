@@ -247,7 +247,6 @@ public class UserActions extends Gameplay{
 	
 	//interactive tooling
 	protected void doStart(){
-		balogger.startTimer();
 		if(!randomizeFlag){
 			int index = levelChooser.getSelectedIndex();
 			level = (int)(index / MAX_STAGES);
