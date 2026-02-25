@@ -41,8 +41,8 @@ public class ConfigGameplay {
 	
 	protected final String ABOUT =
 			"product: reflex_game\n"
-			+"2019 - ???, brand-aware\n\n"
+			+"2019 - brand-aware\n\n"
 			+"version 0.0.1\n"
-			+"mike802@protonmail.com";
+			+"wontzer@gmail.com";
 	
 }
