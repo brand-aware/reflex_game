@@ -9,6 +9,7 @@ package core;
 import java.awt.event.ActionEvent;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 import java.text.DecimalFormat;
 
 import javax.swing.ImageIcon;
@@ -75,7 +76,7 @@ public class UserActions extends Gameplay{
 		
 		int index = ((ycoord - 1) * levelEngine.getWidth()) 
 				+ (xcoord - 1);
-		String path = properties.getBackgroundHighlighted();
+		URL path = properties.getBackgroundHighlighted();
 		ImageIcon icon = new ImageIcon(path);
 		JLabel background = levelEngine.getBackground(index);
 		background.setIcon(icon);
@@ -101,13 +102,13 @@ public class UserActions extends Gameplay{
 					+ (xcoord - 1);
 			
 			if(patternCounter1 <= HELP_DISPLAY_INTERVAL){
-				String path = properties.getBackgroundHighlighted();
+				URL path = properties.getBackgroundHighlighted();
 				ImageIcon icon = new ImageIcon(path);
 				JLabel background = levelEngine.getBackground(index);
 				background.setIcon(icon);
 				patternCounter1++;
 			}else if(patternCounter1 > HELP_DISPLAY_INTERVAL){
-				String path = properties.getBackground();
+				URL path = properties.getBackground();
 				ImageIcon icon = new ImageIcon(path);
 				levelEngine.getBackground(index).setIcon(icon);
 				if(patternCounter2 > PATTERN_WAIT){
@@ -142,14 +143,14 @@ public class UserActions extends Gameplay{
 			int index = ((ycoord - 1) * levelEngine.getWidth()) 
 					+ (xcoord - 1);
 			if(patternCounter1 <= PATTERN_DISPLAY){
-				String path = properties.getBackgroundHighlighted();
+				URL path = properties.getBackgroundHighlighted();
 				ImageIcon icon = new ImageIcon(path);
 				JLabel background = levelEngine.getBackground(index);
 				background.setIcon(icon);
 				patternCounter1++;
 			
 			}else if(patternCounter1 > PATTERN_DISPLAY){
-				String path = properties.getBackground();
+				URL path = properties.getBackground();
 				ImageIcon icon = new ImageIcon(path);
 				levelEngine.getBackground(index).setIcon(icon);
 				
@@ -184,7 +185,7 @@ public class UserActions extends Gameplay{
 				if(coordinate != null){
 					displayPosition = (coordinate[1] - 1) * levelEngine.getWidth()
 							+ (coordinate[0] - 1);
-					String path = properties.getBackgroundHighlighted();
+					URL path = properties.getBackgroundHighlighted();
 					ImageIcon icon = new ImageIcon(path);
 					JLabel background = levelEngine.getBackground(displayPosition);
 					background.setIcon(icon);
@@ -193,7 +194,7 @@ public class UserActions extends Gameplay{
 			}else if(patternCounter1 <= (RANDOM_DISPLAY + randomModifier)){
 				patternCounter1++;
 			}else if(patternCounter1 > PATTERN_DISPLAY && displayPosition > -1){
-				String path = properties.getBackground();
+				URL path = properties.getBackground();
 				ImageIcon icon = new ImageIcon(path);
 				levelEngine.getBackground(displayPosition).setIcon(icon);
 					

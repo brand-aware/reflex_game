@@ -7,6 +7,7 @@
 package utils;
 
 import java.io.File;
+import java.net.URL;
 
 import core.Board;
 
@@ -15,75 +16,71 @@ public class Properties {
 	private Board board;
 	
 	private String rootDir;
-	private String title;
-	private String gameBackground;
-	private String company;
+	private URL title;
+	private URL gameBackground;
+	private URL company;
 	
-	private String background;
-	private String backgroundHighlighted;
+	private URL background;
+	private URL backgroundHighlighted;
 	
-	private String highScores;
 	private String completed;
 	
-	private String[] outsideColors;
-	private String[] centerColors;
+	private URL[] outsideColors;
+	private URL[] centerColors;
 	
 	public Properties(String root){
 		rootDir = root;
 		
-		title = rootDir + File.separator + "img" + File.separator + "logo.png";
-		background = rootDir + File.separator + "img" + File.separator + "background.png";
-		backgroundHighlighted = rootDir + File.separator + "img" + File.separator + "background_highlighted.png";
-		gameBackground = rootDir + File.separator + "img" + File.separator + "big_background.png";
-		company = rootDir + File.separator + "img" + File.separator + "company.png";
+		title = getClass().getResource("/img/logo.png");
+		background = getClass().getResource("/img/background.png");
+		backgroundHighlighted = getClass().getResource("/img/background_highlighted.png");
+		gameBackground = getClass().getResource("/img/big_background.png");
+		company = getClass().getResource("/img/company.png");
 		
-		highScores = rootDir + File.separator + "high_scores.txt";
 		completed = rootDir + File.separator + "completed.txt";
 		
-		outsideColors = new String[] {
-				rootDir + File.separator + "img" + File.separator + "blue_middle.png",
-				rootDir + File.separator + "img" + File.separator + "green_middle.png",
-				rootDir + File.separator + "img" + File.separator + "orange_middle.png",
-				rootDir + File.separator + "img" + File.separator + "yellow_middle.png",
-				rootDir + File.separator + "img" + File.separator + "purple_middle.png"
+		outsideColors = new URL[] {
+				getClass().getResource("/img/blue_middle.png"),
+				getClass().getResource("/img/green_middle.png"),
+				getClass().getResource("/img/orange_middle.png"),
+				getClass().getResource("/img/yellow_middle.png"),
+				getClass().getResource("/img/purple_middle.png")
 		};
 		
-		centerColors = new String[] {
-				rootDir + File.separator + "img" + File.separator + "blue_center.png",
-				rootDir + File.separator + "img" + File.separator + "green_center.png",
-				rootDir + File.separator + "img" + File.separator + "orange_center.png",
-				rootDir + File.separator + "img" + File.separator + "yellow_center.png",
-				rootDir + File.separator + "img" + File.separator + "purple_center.png"
+		centerColors = new URL[] {
+				getClass().getResource("/img/blue_center.png"),
+				getClass().getResource("/img/green_center.png"),
+				getClass().getResource("/img/orange_center.png"),
+				getClass().getResource("/img/yellow_center.png"),
+				getClass().getResource("/img/purple_center.png")
 		};
 	}
 	
 	public String getRoot(){
 		return rootDir;
 	}
-	public String getTitle(){
+	public URL getTitle(){
 		return title;
 	}
-	public String getCompany(){
+	public URL getCompany(){
 		return company;
 	}
-	public String getGameBackground(){
+	public URL getGameBackground(){
 		return gameBackground;
 	}
-	public String getMiddle(int index){
+	public URL getMiddle(int index){
 		return outsideColors[index];
 	}
-	public String getCenter(int index){
+	public URL getCenter(int index){
 		return centerColors[index];
 	}
-	public String getBackground(){
+	public URL getBackground(){
 		return background;
 	}
-	public String getBackgroundHighlighted(){
+	public URL getBackgroundHighlighted(){
 		return backgroundHighlighted;
 	}
-	public String getHighScores(){
-		return highScores;
-	}
+
 	public String getCompletedList(){
 		return completed;
 	}

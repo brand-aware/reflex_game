@@ -13,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -238,7 +239,7 @@ public class Board extends UserActions implements IBoardOutline{
 	
 	private void placeLayeredButton(int column){
 		background = new JLabel();
-		String path = properties.getBackground();
+		URL path = properties.getBackground();
 		ImageIcon icon = new ImageIcon(path);
 		background.setIcon(icon);
 		background.setOpaque(true);

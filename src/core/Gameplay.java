@@ -8,6 +8,7 @@ package core;
 
 import java.awt.event.ActionEvent;
 import java.io.IOException;
+import java.net.URL;
 import java.text.DecimalFormat;
 
 import javax.swing.ImageIcon;
@@ -293,7 +294,7 @@ public class Gameplay extends UtilsBoard{
 	protected void clearHighlight(){
 		int size = allBackgrounds.size();
 		for(int x = 0; x < size; x++){
-			String path = properties.getBackground();
+			URL path = properties.getBackground();
 			ImageIcon image = new ImageIcon(path);
 			allBackgrounds.get(x).setIcon(image);
 		}

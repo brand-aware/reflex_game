@@ -44,7 +44,6 @@ public class Levels {
 	}
 	
 	private void setLevel1(){
-		System.out.println("set level1");
 		//(3,2), (3,3)
 		level1.add(new String[]{"3", "2", "3", "3"});
 		//(5,4), (6,4)
