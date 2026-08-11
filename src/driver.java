@@ -4,9 +4,9 @@
  * product of - ???
  * 2017
  */
-import core.Board;
-import core.Mover;
-import utils.Properties;
+import com.reflex_game.core.Board;
+import com.reflex_game.core.Mover;
+import com.reflex_game.utils.Properties;
 
 public class driver {
 

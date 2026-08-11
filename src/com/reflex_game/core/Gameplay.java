@@ -4,7 +4,7 @@
  * product of - ???
  * 2017
  */
-package core;
+package com.reflex_game.core;
 
 import java.awt.event.ActionEvent;
 import java.io.IOException;
@@ -15,8 +15,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
 
+import com.reflex_game.utils.UtilsBoard;
+
 import highscores.NameInput;
-import utils.UtilsBoard;
 
 public class Gameplay extends UtilsBoard{
 	

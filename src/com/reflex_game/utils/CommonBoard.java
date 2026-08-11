@@ -4,7 +4,7 @@
  * product of - ???
  * 2017
  */
-package utils;
+package com.reflex_game.utils;
 
 import java.util.ArrayList;
 
@@ -19,7 +19,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JTextArea;
 
-import core.LevelEngine;
+import com.reflex_game.core.LevelEngine;
+
 import highscores.IBoardOutline;
 import highscores.NameInput;
 

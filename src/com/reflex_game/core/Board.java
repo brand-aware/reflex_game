@@ -4,7 +4,7 @@
  * product of - ???
  * 2017
  */
-package core;
+package com.reflex_game.core;
 
 import java.awt.Dimension;
 import java.awt.Image;
@@ -28,11 +28,12 @@ import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JTextArea;
 
+import com.reflex_game.utils.Levels;
+import com.reflex_game.utils.Properties;
+
 import highscores.HighScores;
 import highscores.IBoardOutline;
 import highscores.hsProperties;
-import utils.Levels;
-import utils.Properties;
 
 public class Board extends UserActions implements IBoardOutline{
 	
@@ -52,7 +53,8 @@ public class Board extends UserActions implements IBoardOutline{
 		boardPage.setResizable(false);
 		boardPage.setLocation(200, 15);
 		String imageDir = properties.getImageDir();
-		Image logo = Toolkit.getDefaultToolkit().getImage(imageDir + File.separator + "company.png");
+		URL path = getClass().getResource(imageDir + "company.png");
+		Image logo = Toolkit.getDefaultToolkit().getImage(path);
 		boardPage.setIconImage(logo);
 		menuHandler = new MenuHandler();
 		handler = new ButtonHandler();

@@ -4,9 +4,9 @@
  * product of - ???
  * 2017
  */
-package core;
+package com.reflex_game.core;
 
-import utils.Properties;
+import com.reflex_game.utils.Properties;
 
 public class Mover implements Runnable{
 	

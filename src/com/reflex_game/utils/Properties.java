@@ -4,12 +4,12 @@
  * product of - ???
  * 2017
  */
-package utils;
+package com.reflex_game.utils;
 
 import java.io.File;
 import java.net.URL;
 
-import core.Board;
+import com.reflex_game.core.Board;
 
 public class Properties {
 	
@@ -31,28 +31,28 @@ public class Properties {
 	public Properties(String root){
 		rootDir = root;
 		
-		title = getClass().getResource("/img/logo.png");
-		background = getClass().getResource("/img/background.png");
-		backgroundHighlighted = getClass().getResource("/img/background_highlighted.png");
-		gameBackground = getClass().getResource("/img/big_background.png");
-		company = getClass().getResource("/img/company.png");
+		title = getClass().getResource("/com/reflex_game/img/logo.png");
+		background = getClass().getResource("/com/reflex_game/img/background.png");
+		backgroundHighlighted = getClass().getResource("/com/reflex_game/img/background_highlighted.png");
+		gameBackground = getClass().getResource("/com/reflex_game/img/big_background.png");
+		company = getClass().getResource("/com/reflex_game/img/company.png");
 		
 		completed = rootDir + File.separator + "completed.txt";
 		
 		outsideColors = new URL[] {
-				getClass().getResource("/img/blue_middle.png"),
-				getClass().getResource("/img/green_middle.png"),
-				getClass().getResource("/img/orange_middle.png"),
-				getClass().getResource("/img/yellow_middle.png"),
-				getClass().getResource("/img/purple_middle.png")
+				getClass().getResource("/com/reflex_game/img/blue_middle.png"),
+				getClass().getResource("/com/reflex_game/img/green_middle.png"),
+				getClass().getResource("/com/reflex_game/img/orange_middle.png"),
+				getClass().getResource("/com/reflex_game/img/yellow_middle.png"),
+				getClass().getResource("/com/reflex_game/img/purple_middle.png")
 		};
 		
 		centerColors = new URL[] {
-				getClass().getResource("/img/blue_center.png"),
-				getClass().getResource("/img/green_center.png"),
-				getClass().getResource("/img/orange_center.png"),
-				getClass().getResource("/img/yellow_center.png"),
-				getClass().getResource("/img/purple_center.png")
+				getClass().getResource("/com/reflex_game/img/blue_center.png"),
+				getClass().getResource("/com/reflex_game/img/green_center.png"),
+				getClass().getResource("/com/reflex_game/img/orange_center.png"),
+				getClass().getResource("/com/reflex_game/img/yellow_center.png"),
+				getClass().getResource("/com/reflex_game/img/purple_center.png")
 		};
 	}
 	
@@ -96,6 +96,6 @@ public class Properties {
 		return board;
 	}
 	public String getImageDir(){
-		return rootDir + File.separator + "img";
+		return "/com/reflex_game/img/";
 	}
 }

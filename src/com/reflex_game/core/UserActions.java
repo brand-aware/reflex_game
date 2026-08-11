@@ -4,7 +4,7 @@
  * product of - ???
  * 2017
  */
-package core;
+package com.reflex_game.core;
 
 import java.awt.event.ActionEvent;
 import java.io.File;

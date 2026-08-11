@@ -4,15 +4,15 @@
  * product of - ???
  * 2017
  */
-package core;
+package com.reflex_game.core;
 
 import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
-import utils.CommonLevelEngine;
-import utils.Levels;
+import com.reflex_game.utils.CommonLevelEngine;
+import com.reflex_game.utils.Levels;
 
 public class LevelEngine extends CommonLevelEngine{
 		

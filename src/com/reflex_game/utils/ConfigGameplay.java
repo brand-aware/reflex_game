@@ -4,7 +4,7 @@
  * product of - ???
  * 2017
  */
-package utils;
+package com.reflex_game.utils;
 
 public class ConfigGameplay {
 	
