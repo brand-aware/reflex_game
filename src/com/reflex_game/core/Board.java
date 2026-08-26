@@ -18,7 +18,6 @@ import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JCheckBoxMenuItem;
-import javax.swing.JComboBox;
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -26,10 +25,10 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-import javax.swing.JTextArea;
 
 import com.reflex_game.utils.Levels;
 import com.reflex_game.utils.Properties;
+import com.reflex_game.utils.RoundedComponents;
 
 import highscores.HighScores;
 import highscores.IBoardOutline;
@@ -89,41 +88,42 @@ public class Board extends UserActions implements IBoardOutline{
 		boardPage.setPreferredSize(new Dimension(totalX, totalY));
 		
 		ImageIcon title = new ImageIcon(properties.getTitle());
-		JLabel titleLabel = new JLabel();
+		JLabel titleLabel = new RoundedComponents.Label();
 		titleLabel.setIcon(title);
 		titleLabel.setBounds(titleX, titleY, TITLE_WIDTH, TITLE_HEIGHT);
 		
-		start = new JButton("start");
+		start = new RoundedComponents.Button("start");
 		start.setBounds(startX, startY, START_BUTTON_WIDTH, START_BUTTON_HEIGHT);
 		start.addActionListener(handler);
 		
-		stop = new JButton("stop");
+		stop = new RoundedComponents.Button("stop");
 		stop.setBounds(stopX, stopY, STOP_BUTTON_WIDTH, STOP_BUTTON_HEIGHT);
 		stop.addActionListener(handler);
 		
-		help = new JButton("help");
+		help = new RoundedComponents.Button("help");
 		help.setBounds(helpX, helpY, HELP_BUTTON_WIDTH, HELP_BUTTON_HEIGHT);
 		help.setEnabled(false);
 		help.addActionListener(handler);
 		
-		levelChooser = new JComboBox<Double>(properties.getLevelList());
+		levelChooser = new RoundedComponents.ComboBox<Double>(properties.getLevelList());
+		levelChooser.setSelectedIndex(25);
 		levelChooser.setBounds(chooserX, chooserY, LEVEL_CHOOSER_WIDTH, LEVEL_CHOOSER_HEIGHT);
 		
-		score = new JTextArea(EMPTY_DISPLAY);
+		score = new RoundedComponents.TextArea(EMPTY_DISPLAY);
 		score.setBounds(scoreDisplayX, scoreDisplayY, SCORE_DISPLAY_WIDTH, SCORE_DISPLAY_HEIGHT);
 		score.setEditable(false);
 		
 		JLabel scoreLabel = new JLabel("Score:");
 		scoreLabel.setBounds(scoreLabelX, scoreLabelY, SCORE_LABEL_WIDTH, SCORE_LABEL_HEIGHT);
 		
-		time = new JTextArea(EMPTY_DISPLAY);
+		time = new RoundedComponents.TextArea(EMPTY_DISPLAY);
 		time.setBounds(timeDisplayX, timeDisplayY, TIME_DISPLAY_WIDTH, TIME_DISPLAY_HEIGHT);
 		time.setEditable(false);
 		
 		JLabel timeLabel = new JLabel("Elapsed time:");
 		timeLabel.setBounds(timeLabelX, timeLabelY, TIME_LABEL_WIDTH, TIME_LABEL_HEIGHT);
 		
-		messages = new JTextArea();
+		messages = new RoundedComponents.TextArea();
 		messages.setBounds(messageDisplayX, messageDisplayY, MESSAGE_DISPLAY_WIDTH, MESSAGE_DISPLAY_HEIGHT);
 		messages.setEditable(false);
 		
@@ -247,7 +247,7 @@ public class Board extends UserActions implements IBoardOutline{
 		background.setOpaque(true);
 		
 		int xcoord = BACKGROUND_WIDTH * (column % WIDTH) + (((column % WIDTH) + 1) * SPACE);
-		int ycoord = (BACKGROUND_HEIGHT * counter) + ((counter + 1) * SPACE) + topHeight;
+		int ycoord = (BACKGROUND_HEIGHT * counter) + ((counter + 1) * SPACE) + topHeight - 25;
 		background.setBounds(xcoord, ycoord, BACKGROUND_WIDTH, BACKGROUND_HEIGHT);
 		pane.add(background);
 		allBackgrounds.add(background);
